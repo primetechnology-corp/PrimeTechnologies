@@ -279,6 +279,128 @@ footer {
     color: #FFFFFF;
 }
 
+/* Services Page */
+.services-page header {
+    position: sticky;
+    background-color: #333;
+}
+
+#services-detailed {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.service-detailed-card {
+    display: flex;
+    background: #2C2043;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 30px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.service-detailed-card .service-icon {
+    font-size: 48px;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    width: 60px;
+    text-align: center;
+}
+
+.service-detailed-card .service-content h3 {
+    margin-top: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.service-detailed-card .service-content p {
+    color: #C5C1D1;
+    line-height: 1.8;
+}
+
+#cta {
+    text-align: center;
+    background: #2C2043;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#cta h2 {
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+#cta p {
+    font-size: 18px;
+    color: #C5C1D1;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0779e4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0568bf;
+}
+
+/* Success Cases Page */
+.success-cases-page header {
+    position: sticky;
+    background-color: #333;
+}
+
+#success-cases-detailed {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.success-case-detailed-card {
+    background: #2C2043;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.success-case-detailed-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.success-case-content {
+    padding: 30px;
+}
+
+.success-case-content h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.success-case-content p {
+    color: #C5C1D1;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.success-case-content p strong {
+    color: #FFFFFF;
+}
+
 /* Contact Form */
 #contact-form {
     max-width: 700px;
@@ -430,17 +552,6 @@ footer {
     background-color: #0568bf;
 }
 
-.service-box {
-    background: #2C2043;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.service-box h3 {
-    color: #FFFFFF;
-}
-
 /* Services Section */
 .services-grid {
     display: grid;
@@ -520,7 +631,6 @@ footer {
     padding-top: 20px;
     padding-bottom: 50px;
 }
-
 .swiper-pagination {
     position: absolute;
     bottom: 20px;
