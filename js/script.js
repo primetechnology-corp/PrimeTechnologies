@@ -19,7 +19,31 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+
+            // INÍCIO DA LÓGICA DO EMAILJS
+            // Substitua com suas próprias chaves do EmailJS
+            const serviceID = 'SEU_SERVICE_ID';
+            const templateID = 'SEU_TEMPLATE_ID';
+            const publicKey = 'SUA_PUBLIC_KEY';
+
+            emailjs.init(publicKey);
+
+            const templateParams = {
+                name: contactForm.querySelector('input[name="name"]').value,
+                email: contactForm.querySelector('input[name="email"]').value,
+                message: contactForm.querySelector('textarea[name="message"]').value,
+            };
+
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function(response) {
+                   console.log('SUCCESS!', response.status, response.text);
+                   alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                   contactForm.reset(); // Limpa o formulário após o envio
+                }, function(error) {
+                   console.log('FAILED...', error);
+                   alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.');
+                });
+            // FIM DA LÓGICA DO EMAILJS
         });
     }
 
