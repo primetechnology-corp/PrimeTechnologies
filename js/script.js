@@ -3,16 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     const contactForm = document.getElementById('contact-form');
     const teamSwiper = document.querySelector('.team-swiper');
+    const introductionSection = document.getElementById('introduction');
 
-    // Adiciona fundo ao header no scroll (apenas na página inicial)
-    if (header && !document.body.classList.contains('contact-page')) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    const isHomePage = !document.body.classList.contains('contact-page') &&
+                       !document.body.classList.contains('services-page') &&
+                       !document.body.classList.contains('success-cases-page');
+
+    // Scripts que rodam apenas na página inicial
+    if (isHomePage) {
+        // Adiciona fundo ao header no scroll
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
     }
 
     // Lógica do formulário de contato
