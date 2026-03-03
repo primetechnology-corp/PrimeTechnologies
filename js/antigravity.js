@@ -31,7 +31,7 @@ window.onload = () => {
 
             // Criar múltiplos hexágonos em posições aleatórias para evitar congelamento
             const bodies = [];
-            for (let i = 0; i < 170; i++) { // Criar 50 hexágonos
+            for (let i = 0; i < 70; i++) { // Criar 50 hexágonos
                 const body = Bodies.polygon(
                     Math.random() * section.clientWidth,
                     Math.random() * section.clientHeight,
