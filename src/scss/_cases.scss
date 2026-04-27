@@ -1,0 +1,245 @@
+// ============================================
+// Prime Technology - Success Cases Section
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.cases {
+  @include section-padding;
+  @include scroll-margin;
+  position: relative;
+  background: $color-dark-surface;
+
+  &__inner {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    @include respond-to(md) {
+      margin-bottom: $spacing-4xl;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-secondary;
+    margin-bottom: $spacing-md;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: $color-secondary;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: $spacing-md;
+
+    .highlight {
+      @include text-gradient;
+    }
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    @include card-base;
+    overflow: hidden;
+    @include flex-column;
+
+    &:hover {
+      .cases__card-image img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    @include respond-to(md) {
+      height: 220px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
+    }
+
+    // Overlay gradient
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, $color-dark-card 0%, transparent 100%);
+    }
+  }
+
+  &__card-badge {
+    position: absolute;
+    top: $spacing-md;
+    left: $spacing-md;
+    z-index: 2;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    background: rgba($color-primary, 0.9);
+    color: $color-white;
+    backdrop-filter: blur(4px);
+  }
+
+  &__card-body {
+    padding: $spacing-xl;
+    @include flex-column;
+    gap: $spacing-md;
+    flex-grow: 1;
+  }
+
+  &__card-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    line-height: $line-height-snug;
+  }
+
+  &__card-description {
+    font-size: $font-size-base;
+    color: $color-gray-400;
+    line-height: $line-height-relaxed;
+    @include truncate(3);
+    flex-grow: 1;
+  }
+
+  &__card-metrics {
+    display: flex;
+    gap: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($color-white, 0.06);
+    margin: 0;
+  }
+
+  &__card-metric {
+    @include flex-column;
+
+    .metric-value {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      @include text-gradient;
+      margin: 0;
+      order: -1; // Value appears above label visually
+    }
+
+    .metric-label {
+      font-size: $font-size-xs;
+      color: $color-gray-500;
+      margin-top: 2px;
+    }
+  }
+
+  // Testimonial highlight
+  &__testimonial {
+    margin-top: $spacing-3xl;
+    @include glass-effect;
+    border-radius: $radius-xl;
+    padding: $spacing-2xl;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-to(md) {
+      padding: $spacing-3xl;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .testimonial-quote {
+      font-size: $font-size-lg;
+      color: $color-gray-300;
+      line-height: $line-height-relaxed;
+      font-style: italic;
+      margin-bottom: $spacing-lg;
+
+      @include respond-to(md) {
+        font-size: $font-size-xl;
+      }
+
+      &::before {
+        content: '"';
+        @include text-gradient;
+        font-size: $font-size-4xl;
+        font-weight: $font-weight-bold;
+        line-height: 0;
+        vertical-align: -0.4em;
+        margin-right: $spacing-xs;
+      }
+    }
+
+    .testimonial-author {
+      @include flex-column;
+      align-items: center;
+      gap: $spacing-xs;
+
+      cite {
+        font-style: normal;
+        @include flex-column;
+        align-items: center;
+        gap: $spacing-xs;
+      }
+
+      strong {
+        color: $color-white;
+        font-weight: $font-weight-semibold;
+      }
+
+      span {
+        font-size: $font-size-sm;
+        color: $color-gray-500;
+      }
+    }
+  }
+}

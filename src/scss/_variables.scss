@@ -1,0 +1,94 @@
+// ============================================
+// Prime Technology - Design Tokens & Variables
+// ============================================
+
+// Colors (Brand Palette)
+$color-primary: #44bccd;
+$color-primary-light: #72d3df;
+$color-secondary: #296dac;
+$color-accent: #44bccd;
+
+// Neutrals
+$color-dark: #000000;
+$color-dark-blue: #0b1a2a;
+$color-dark-surface: #0f1720;
+$color-dark-card: #121f2d;
+$color-gray-700: #334155;
+$color-gray-600: #5b6b7b;
+$color-gray-500: #8a97a6;
+$color-gray-400: #b9c3cd;
+$color-gray-300: #d8dfe6;
+$color-gray-200: #e6ebf0;
+$color-white: #fefefe;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+$gradient-card: linear-gradient(145deg, $color-dark-card 0%, $color-dark-surface 100%);
+
+// Typography
+$font-primary: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-heading: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+$font-size-6xl: 3.75rem;   // 60px
+
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+$line-height-tight: 1.1;
+$line-height-snug: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// Spacing
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+$spacing-4xl: 6rem;     // 96px
+$spacing-5xl: 8rem;     // 128px
+
+// Container
+$container-max-width: 1200px;
+$container-padding: $spacing-lg;
+
+// Border Radius
+$radius-sm: 0.375rem;   // 6px
+$radius-md: 0.5rem;     // 8px
+$radius-lg: 0.75rem;    // 12px
+$radius-xl: 1rem;       // 16px
+$radius-full: 9999px;
+
+// Shadows
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+$shadow-glow-primary: 0 0 30px rgba($color-primary, 0.3);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1400px;
+
+// Z-Index
+$z-header: 1000;
+$z-overlay: 900;

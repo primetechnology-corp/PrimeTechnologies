@@ -1,0 +1,20 @@
+// ============================================
+// Prime Technology - Main Stylesheet
+// ============================================
+
+// Foundation
+@use 'variables';
+@use 'mixins';
+@use 'base';
+
+// Components
+@use 'header';
+
+// Sections
+@use 'hero';
+@use 'services';
+@use 'cases';
+@use 'footer';
+
+// Animations
+@use 'animations';

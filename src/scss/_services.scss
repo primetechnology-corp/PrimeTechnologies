@@ -1,0 +1,192 @@
+// ============================================
+// Prime Technology - Services Section
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.services {
+  @include section-padding;
+  @include scroll-margin;
+  position: relative;
+  background: $color-dark;
+
+  // Subtle background accent
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba($color-primary, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    @include respond-to(md) {
+      margin-bottom: $spacing-4xl;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-primary-light;
+    margin-bottom: $spacing-md;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: $color-primary;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: $spacing-md;
+
+    .highlight {
+      @include text-gradient;
+    }
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl;
+    }
+  }
+
+  &__card {
+    @include card-base;
+    padding: $spacing-xl;
+    @include flex-column;
+    gap: $spacing-md;
+    position: relative;
+    overflow: hidden;
+
+    @include respond-to(md) {
+      padding: $spacing-2xl;
+    }
+
+    // Hover glow accent
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: $gradient-primary;
+      opacity: 0;
+      transition: opacity $transition-base;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  &__card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-lg;
+    @include flex-center;
+    font-size: $font-size-2xl;
+    flex-shrink: 0;
+
+    &--blue {
+      background: rgba($color-primary, 0.15);
+      color: $color-primary-light;
+    }
+
+    &--green {
+      background: rgba($color-secondary, 0.15);
+      color: $color-secondary;
+    }
+
+    &--orange {
+      background: rgba($color-accent, 0.15);
+      color: $color-accent;
+    }
+
+    &--purple {
+      background: rgba(#A855F7, 0.15);
+      color: #A855F7;
+    }
+
+    &--cyan {
+      background: rgba(#06B6D4, 0.15);
+      color: #06B6D4;
+    }
+
+    &--pink {
+      background: rgba(#EC4899, 0.15);
+      color: #EC4899;
+    }
+  }
+
+  &__card-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    line-height: $line-height-snug;
+  }
+
+  &__card-description {
+    font-size: $font-size-base;
+    color: $color-gray-400;
+    line-height: $line-height-relaxed;
+    flex-grow: 1;
+  }
+
+  &__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__card-tag {
+    font-size: $font-size-xs;
+    color: $color-gray-500;
+    background: rgba($color-white, 0.04);
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    border: 1px solid rgba($color-white, 0.06);
+  }
+}

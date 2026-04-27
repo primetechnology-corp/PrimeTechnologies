@@ -1,0 +1,178 @@
+// ============================================
+// Prime Technology - Header / Navigation
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-header;
+  transition: all $transition-base;
+  padding: $spacing-md 0;
+
+  &.scrolled {
+    @include glass-effect;
+    padding: $spacing-sm 0;
+    box-shadow: $shadow-md;
+  }
+
+  &__inner {
+    @include container;
+    @include flex-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    .logo-icon {
+      width: 120px;
+      height: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba($color-primary, 0.45));
+      transition: transform $transition-base, filter $transition-base;
+    }
+
+    &:hover .logo-icon {
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 22px rgba($color-primary, 0.6));
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include respond-to(lg) {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    transition: color $transition-fast;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $gradient-primary;
+      transition: width $transition-base;
+      border-radius: $radius-full;
+    }
+
+    &:hover {
+      color: $color-white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__cta {
+    @include button-base;
+    background: $gradient-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-glow-primary;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba($color-primary, 0.4);
+    }
+  }
+
+  &__mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-sm;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+
+    span {
+      width: 24px;
+      height: 2px;
+      background: $color-white;
+      border-radius: $radius-full;
+      transition: all $transition-base;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  // Mobile Navigation
+  &__mobile-nav {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    background: rgba($color-dark, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    @include flex-center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity $transition-base, visibility $transition-base;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    @include respond-to(lg) {
+      display: none !important;
+    }
+
+    .mobile-nav-links {
+      @include flex-column;
+      align-items: center;
+      gap: $spacing-xl;
+
+      a {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-semibold;
+        color: $color-gray-300;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
