@@ -120,8 +120,11 @@
   border: none;
   border-radius: $radius-lg;
   cursor: pointer;
-  transition: all $transition-base;
   white-space: nowrap;
+
+  @include respond-below(md){
+    width: 100%;
+  }
 }
 
 // Section Title

@@ -103,7 +103,7 @@ class HeroBackground {
     this.camera = null
     this.renderer = null
     this.mesh = null
-    this.clock = new THREE.Clock()
+    this.clock = new THREE.Timer()
     this.rafId = null
     this.touchTexture = null
     this.pointer = new THREE.Vector2(0.5, 0.5)

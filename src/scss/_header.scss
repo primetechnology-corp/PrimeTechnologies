@@ -92,6 +92,9 @@
     font-size: $font-size-sm;
     border-radius: $radius-lg;
     box-shadow: $shadow-glow-primary;
+    background-size: 180% 180%;
+    background-position: 0% 50%;
+    transition: background-position $transition-base, transform $transition-base, box-shadow $transition-base;
     display: none;
 
     @include respond-to(lg) {
@@ -99,8 +102,11 @@
     }
 
     &:hover {
+      background: $gradient-secondary;
+      background-size: 180% 180%;
+      background-position: 100% 50%;
       transform: translateY(-2px);
-      box-shadow: 0 0 40px rgba($color-primary, 0.4);
+      box-shadow: 0 12px 30px rgba($color-secondary, 0.38);
     }
   }
 

@@ -23,6 +23,7 @@ $color-white: #fefefe;
 
 // Gradients
 $gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+$gradient-secondary: linear-gradient(135deg, $color-secondary 0%, #1f4f85 100%);
 $gradient-card: linear-gradient(145deg, $color-dark-card 0%, $color-dark-surface 100%);
 
 // Typography
@@ -62,7 +63,7 @@ $spacing-4xl: 6rem;     // 96px
 $spacing-5xl: 8rem;     // 128px
 
 // Container
-$container-max-width: 1200px;
+$container-max-width: 1280px;
 $container-padding: $spacing-lg;
 
 // Border Radius
@@ -79,7 +80,7 @@ $shadow-glow-primary: 0 0 30px rgba($color-primary, 0.3);
 
 // Transitions
 $transition-fast: 0.15s ease;
-$transition-base: 0.3s ease;
+$transition-base: 0.3s ease-in-out;
 $transition-slow: 0.5s ease;
 
 // Breakpoints
