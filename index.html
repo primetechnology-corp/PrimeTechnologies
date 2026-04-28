@@ -1,156 +1,336 @@
 <!DOCTYPE html>
-<!-- teste -->
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvimento de Sistemas | Soluções de Software Personalizadas</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo"><img src="Imagens/Teste3logo.png" alt="Prime Technologies Logo"></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Serviços</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="success-cases.html">Casos de Sucesso</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                </ul>
-            </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Prime Technology | Desenvolvimento de Sistemas, Soluções de Software</title>
+    <meta name="description" content="A Prime Technology transforma ideias em soluções digitais de alto impacto. Especialistas em desenvolvimento de software, soluções de software, design ux/ui e consultoria em tecnologia." />
+    <meta name="keywords" content="desenvolvimento de software, sistemas, design, consultoria tecnologia, transformação digital, ux/ui, São Paulo" />
+    <meta name="author" content="Prime Technology" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://primetechnology.com.br/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://primetechnology.com.br/" />
+    <meta property="og:title" content="Prime Technology | Soluções Digitais de Alto Impacto" />
+    <meta property="og:description" content="A Prime Technology transforma ideias em soluções digitais de alto impacto. Especialistas em desenvolvimento de software, soluções de software, design ux/ui e consultoria em tecnologia." />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Prime Technology" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prime Technology | Soluções Digitais de Alto Impacto" />
+    <meta name="twitter:description" content="A Prime Technology transforma ideias em soluções digitais de alto impacto. Especialistas em desenvolvimento de software, soluções de software, design ux/ui e consultoria em tecnologia." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Structured Data: Organization (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Prime Technology",
+      "url": "https://primetechnology.com.br",
+      "logo": "https://primetechnology.com.br/favicon.ico",
+      "description": "Transformamos ideias em soluções digitais de alto impacto. Especialistas em desenvolvimento de software, IA e consultoria.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contato@primetechnology.com.br"
+      },
+      "sameAs": [
+        "https://www.facebook.com/PrimeTechnologyLtda",
+        "https://instagram.com/primetechnology",
+      ]
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" role="banner">
+      <div class="header__inner">
+        <a href="#inicio" class="header__logo" aria-label="Prime Technology - Página inicial">
+          <img src="/src/assets/prime-logo.png" alt="Logotipo Prime Technology" class="logo-icon" width="52" height="52" />
+        </a>
+
+        <nav class="header__nav" aria-label="Navegação principal">
+          <a href="#servicos" class="header__link">Serviços</a>
+          <a href="#casos" class="header__link">Casos de Sucesso</a>
+          <a href="#contato" class="header__link">Contato</a>
+        </nav>
+
+        <a href="#contato" class="header__cta">Fale Conosco</a>
+
+        <button class="header__mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav class="header__mobile-nav" id="mobile-nav" aria-label="Navegação mobile">
+        <div class="mobile-nav-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#casos">Casos de Sucesso</a>
+          <a href="#servicos">Sobre</a>
+          <a href="#contato">Contato</a>
         </div>
+      </nav>
     </header>
 
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <section id="introduction">
-            <div class="container">
-                <h1>Bem-vindo à Prime Technology</h1>
-                <p>Inovação e excelência em soluções de tecnologia.</p>
-            </div>
-        </section>
-    
-        <!-- Services Section -->
-        <section id="services">
-            <div class="container">
-                <h2>Nossos Serviços</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>Consultoria em TI</h3>
-                        <p>Oferecemos consultoria especializada para otimizar sua infraestrutura de TI e alinhar a tecnologia aos seus objetivos de negócio.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Desenvolvimento de Software</h3>
-                        <p>Criamos soluções de software personalizadas, desde aplicativos web até sistemas empresariais complexos.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Design UX/UI</h3>
-                        <p>Projetamos interfaces intuitivas e experiências de usuário envolventes que encantam seus clientes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Team Section -->
-        <section id="team">
-            <div class="container">
-                <h2>Nosso Time</h2>
-                <div class="team-carousel-wrapper">
-                    <div class="swiper-container team-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membro do Time 1">
-                                    <h3>João da Silva</h3>
-                                    <p>Desenvolvedor Full-Stack</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Membro do Time 2">
-                                    <h3>Maria Oliveira</h3>
-                                    <p>Designer UX/UI</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Membro do Time 3">
-                                    <h3>Carlos Pereira</h3>
-                                    <p>Gerente de Projetos</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Membro do Time 4">
-                                    <h3>Ana Costa</h3>
-                                    <p>Engenheira de QA</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Success Cases Section -->
-        <section id="success-cases">
-            <div class="container">
-                <h2>Cases de Sucesso</h2>
-                <div class="case-grid">
-                    <div class="case-card">
-                        <img src="Imagens/Flux.png" alt="Otimização de Processos">
-                        <div class="case-content">
-                            <h3>Otimização de Processos para Empresa Flux</h3>
-                            <p>Reduzimos em 30% os custos operacionais da Flux através da implementação de um novo sistema de gestão integrada.</p>
-                        </div>
-                    </div>
-                    <div class="case-card">
-                        <img src="Imagens/Post.png" alt="Lançamento de E-commerce">
-                        <div class="case-content">
-                            <h3>Lançamento de E-commerce para a Post</h3>
-                            <p>Desenvolvemos e lançamos uma plataforma de e-commerce que aumentou as vendas online da Post em 200% no primeiro trimestre.</p>
-                        </div>
-                    </div>
-                    <!-- <div class="case-card">
-                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=800&q=60" alt="App Mobile">
-                        <div class="case-content">
-                            <h3>App Mobile para Startup Z</h3>
-                            <p>Criamos um aplicativo móvel inovador que alcançou 1 milhão de downloads em 6 meses, posicionando a Startup Z como líder de mercado.</p>
-                        </div>
-                    </div> -->
-                </div>
+      <!-- ========== HERO ========== -->
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <div class="hero__text" data-animate>
+        
+            <h1 id="hero-title" class="hero__title">
+              Transformamos ideias em
+             soluções digitais
+              de alto impacto
+            </h1>
+
+            <p class="hero__description">
+              Somos especialistas em desenvolvimento de software, aplicativos móveis, inteligência artificial e consultoria em tecnologia. Impulsionamos o crescimento do seu negócio com soluções sob medida.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#contato" class="btn btn--primary btn--lg">
+                Comece seu Projeto
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="#servicos" class="btn btn--outline btn--lg">
+                Nossos Serviços
+              </a>
             </div>
-        </section>
+
+          </div>
+
+          <div class="hero__brand" data-animate>
+            <img src="/src/assets/prime-logo.png" alt="Logotipo Prime Technology" class="hero__brand-logo" width="360" height="360" loading="eager" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SERVIÇOS ========== -->
+      <section class="services" id="servicos" aria-labelledby="services-title">
+        <div class="services__inner">
+          <header class="services__header" data-animate>
+            <p class="services__label">Nossos Serviços</p>
+            <h2 id="services-title" class="services__title">
+              Soluções completas para sua
+              <span class="highlight">transformação digital</span>
+            </h2>
+            <p class="services__subtitle">
+              Oferecemos um portfólio completo de serviços em tecnologia, desde o desenvolvimento até a implantação e suporte contínuo.
+            </p>
+          </header>
+
+          <div class="services__grid">
+            <!-- Service 1 -->
+            <article class="services__card" data-animate>
+              <div class="services__card-icon services__card-icon--blue" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="services__card-title">Desenvolvimento de Software</h3>
+              <p class="services__card-description">Criamos soluções de software personalizadas, desde aplicativos web até sistemas empresariais complexos.
+              </p>
+          
+            </article>
+
+            <!-- Service 2 -->
+            <article class="services__card" data-animate>
+              <div class="services__card-icon services__card-icon--green" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <h3 class="services__card-title">Consultoria em TI</h3>
+              <p class="services__card-description">
+                Oferecemos orientação estratégica e soluções personalizadas para otimizar sua infraestrutura tecnológica e impulsionar sua transformação digital.
+              </p>
+          
+            </article>
+
+            <!-- Service 3 -->
+            <article class="services__card" data-animate>
+              <div class="services__card-icon services__card-icon--purple" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18"/><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 14h8"/><path d="M8 18h5"/></svg>
+              </div>
+              <h3 class="services__card-title">Design UX/UI</h3>
+              <p class="services__card-description">
+              Projetamos interfaces intuitivas e experiências de usuário envolventes que encantam seus clientes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CASOS DE SUCESSO ========== -->
+      <section class="cases" id="casos" aria-labelledby="cases-title">
+        <div class="cases__inner">
+          <header class="cases__header" data-animate>
+            <p class="cases__label">Casos de Sucesso</p>
+            <h2 id="cases-title" class="cases__title">
+              Resultados que
+              <span class="highlight">falam por si</span>
+            </h2>
+            <p class="cases__subtitle">
+              Conheça alguns dos projetos que entregamos e os resultados alcançados por nossos clientes.
+            </p>
+          </header>
+
+          <div class="cases__grid">
+            <!-- Case 1 - Image from right -->
+            <article class="cases__card cases__card--right" data-animate>
+              <div class="cases__card-body">
+                <span class="cases__card-badge">Melhoria</span>
+                <h3 class="cases__card-title">Otimização de processos</h3>
+                <p class="cases__card-description">
+                  Reduzimos em 30% os custos operacionais da Flux através da implementação de um novo sistema de gestão integrada.
+                </p>
+              </div>
+              <div class="cases__card-screen">
+                <div class="cases__card-screen-frame">
+                  <img src="src/assets/flux-project.png" alt="Dashboard de plataforma de e-commerce com gráficos de vendas e métricas de desempenho" width="600" height="400" loading="lazy" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Case 2 - Image from left -->
+            <article class="cases__card cases__card--left" data-animate>
+              <div class="cases__card-screen">
+                <div class="cases__card-screen-frame">
+                  <img src="src/assets/post-project.png" alt="Interface de aplicativo de telemedicina mostrando agenda de consultas" width="600" height="400" loading="lazy" />
+                </div>
+              </div>
+              <div class="cases__card-body">
+                <span class="cases__card-badge">Plataforma</span>
+                <h3 class="cases__card-title">Implementação de Plataforma</h3>
+                <p class="cases__card-description">
+                  Desenvolvemos e lançamos uma plataforma de e-commerce que aumentou as vendas online da Post em 200% no primeiro trimestre.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-        <div class="social-media">
-            <a href="https://www.facebook.com/PrimeTechnologyLtda" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/primetechnologyltda/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <!-- <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a> -->
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="contato" role="contentinfo">
+      <!-- CTA Section -->
+      <section class="footer__cta" aria-labelledby="cta-title">
+        <div class="footer__cta-inner">
+          <h2 id="cta-title" class="footer__cta-title">
+            Pronto para transformar sua
+            <span class="highlight">ideia em realidade</span>?
+          </h2>
+          <p class="footer__cta-description">
+            Vamos conversar sobre o seu projeto. Nossa equipe está pronta para entender suas necessidades e propor a melhor solução.
+          </p>
+          <div class="footer__cta-actions">
+            <a href="mailto:contato@primetechnology.com.br" class="btn btn--primary btn--lg">
+              Entrar em Contato
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+      
+          </div>
         </div>
-        <p>&copy; 2026 Prime Technologies. Todos os direitos reservados.</p>
+      </section>
+
+      <!-- Footer Main -->
+      <div class="footer__main">
+        <div class="footer__grid">
+          <!-- Brand -->
+          <div class="footer__brand">
+            <div class="footer__logo" aria-label="Prime Technology">
+              <a href="https://primetechnology.com.br/">
+                <img src="/src/assets/prime-logo.png" alt="Logotipo Prime Technology" class="logo-icon" width="56" height="56" />
+              </a>
+            </div>
+            <p class="footer__description">
+              Transformamos ideias em soluções digitais de alto impacto. Tecnologia de ponta para impulsionar o crescimento do seu negócio.
+            </p>
+            <div class="footer__socials" role="list" aria-label="Redes sociais">
+           
+              <a href="https://www.facebook.com/PrimeTechnologyLtda" target="_blank" rel="noopener noreferrer" class="footer__social-link" role="listitem" aria-label="Siga-nos no Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/primetechnologyltda/" target="_blank" rel="noopener noreferrer" class="footer__social-link" role="listitem" aria-label="Siga-nos no Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services Column -->
+          <nav class="footer__column" aria-label="Links de serviços">
+            <h3 class="footer__column-title">Serviços</h3>
+            <ul class="footer__links">
+              <li><a href="#servicos" class="footer__link">Desenvolvimento de Software</a></li>
+              <li><a href="#servicos" class="footer__link">Consultoria em TI</a></li>
+              <li><a href="#servicos" class="footer__link">Design UX/UI</a></li>
+            </ul>
+          </nav>
+
+          <!-- Company Column -->
+          <nav class="footer__column" aria-label="Links da empresa">
+            <h3 class="footer__column-title">Empresa</h3>
+            <ul class="footer__links">
+              <li><a href="#servicos" class="footer__link">Serviços</a></li>
+              <li><a href="#casos" class="footer__link">Casos de Sucesso</a></li>
+              <li><a href="#contato" class="footer__link">Contato</a></li>
+            </ul>
+          </nav>
+
+          <!-- Contact Column -->
+          <div class="footer__column">
+            <h3 class="footer__column-title">Contato</h3>
+            <address class="footer__links">
+              <div class="footer__contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <a href="mailto:contato@primetechnology.com.br">contato@primetechnology.com.br</a>
+              </div>
+              <div class="footer__contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                São Paulo, SP — Brasil
+              </div>
+              <div class="footer__contact-item">
+
+              </div>
+            </address>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer__bottom">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">
+            &copy; <time id="footer-year"></time> Prime Technology. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script> <!-- Biblioteca de física -->
-    <script src="js/script.js"></script>
-    <script src="js/antigravity.js"></script> <!-- O SCRIPT DA ANIMAÇÃO -->
-</body>
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

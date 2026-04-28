@@ -1,0 +1,176 @@
+// ============================================
+// Prime Technology - Mixins & Utilities
+// ============================================
+
+@use 'variables' as *;
+
+// Responsive Breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  } @else if $breakpoint == 2xl {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: ($breakpoint-sm - 1px)) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: ($breakpoint-md - 1px)) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: ($breakpoint-lg - 1px)) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: ($breakpoint-xl - 1px)) { @content; }
+  }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+// Flexbox Helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Section Padding
+@mixin section-padding {
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    padding-top: $spacing-4xl;
+    padding-bottom: $spacing-4xl;
+  }
+
+  @include respond-to(lg) {
+    padding-top: $spacing-4xl;
+    padding-bottom: $spacing-4xl;
+  }
+}
+
+// Glass Effect
+@mixin glass-effect {
+  background: rgba($color-dark-card, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba($color-white, 0.08);
+}
+
+// Card Styles
+@mixin card-base {
+  background: $gradient-card;
+  border-radius: $radius-xl;
+  border: 1px solid rgba($color-white, 0.06);
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.3);
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Text Gradient
+@mixin text-gradient($gradient: $gradient-primary) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Button Base
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-xl;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  white-space: nowrap;
+
+  @include respond-below(md){
+    width: 100%;
+  }
+}
+
+// Section Title
+@mixin section-title {
+  font-family: $font-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-white;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
+  }
+}
+
+// Section Subtitle
+@mixin section-subtitle {
+  font-size: $font-size-lg;
+  color: $color-gray-400;
+  line-height: $line-height-relaxed;
+  max-width: 600px;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// Truncate Text
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Smooth Scroll Anchor offset
+@mixin scroll-margin {
+  scroll-margin-top: 80px;
+}

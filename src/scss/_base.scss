@@ -1,0 +1,107 @@
+// ============================================
+// Prime Technology - Base & Reset Styles
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Import Brand Font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;  
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-gray-300;
+  background-color: $color-dark;
+  overflow-x: hidden;
+  width: 100%;
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+// Utility Classes
+.container {
+  @include container;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Scrollbar Styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-gray-700;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $color-gray-600;
+  }
+}
+
+// Selection
+::selection {
+  background: rgba($color-primary, 0.3);
+  color: $color-white;
+}
+

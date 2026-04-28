@@ -1,0 +1,22 @@
+{
+  "name": "prime-tech",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "sass": "^1.99.0",
+    "vite": "^8.0.10",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-html-minifier-terser": "^3.8.0",
+    "vite-plugin-imagemin": "^0.6.1"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  }
+}

@@ -1,0 +1,228 @@
+// ============================================
+// Prime Technology - Footer
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer {
+  position: relative;
+  background: $color-dark-blue;
+  overflow: hidden;
+
+  // Top accent line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $color-primary, $color-secondary, transparent);
+  }
+
+  // CTA Section
+  &__cta {
+    @include section-padding;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba($color-white, 0.06);
+    }
+  }
+
+  &__cta-inner {
+    @include container;
+    max-width: 800px;
+  }
+
+  &__cta-title {
+    @include section-title;
+    margin-bottom: $spacing-md;
+
+    .highlight {
+      @include text-gradient;
+    }
+  }
+
+  &__cta-description {
+    @include section-subtitle;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
+  }
+
+  // Main Footer Content
+  &__main {
+    padding: $spacing-3xl 0;
+
+    @include respond-to(md) {
+      padding: $spacing-4xl 0;
+    }
+  }
+
+  &__grid {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+
+    @include respond-to(md) {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: $spacing-3xl;
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+  }
+
+  // Brand Column
+  &__brand {
+    @include flex-column;
+    gap: $spacing-lg;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+
+    .logo-icon {
+      width: auto;
+      height: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 22px rgba($color-primary, 0.5));
+      transition: transform $transition-base, filter $transition-base;
+    }
+
+    &:hover .logo-icon {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 24px rgba($color-primary, 0.6));
+    }
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    color: $color-gray-500;
+    line-height: $line-height-relaxed;
+    max-width: 320px;
+  }
+
+  &__socials {
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-md;
+    background: rgba($color-white, 0.05);
+    border: 1px solid rgba($color-white, 0.08);
+    @include flex-center;
+    color: $color-gray-400;
+    font-size: $font-size-lg;
+    transition: all $transition-base;
+
+    &:hover {
+      background: rgba($color-primary, 0.15);
+      border-color: rgba($color-primary, 0.3);
+      color: $color-primary-light;
+      transform: translateY(-2px);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  }
+
+  // Footer Columns
+  &__column {
+    @include flex-column;
+    gap: $spacing-lg;
+  }
+
+  &__column-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__links {
+    @include flex-column;
+    gap: $spacing-md;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-gray-500;
+    transition: all $transition-fast;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    &:hover {
+      color: $color-primary-light;
+      transform: translateX(4px);
+    }
+  }
+
+  &__contact-item {
+    font-size: $font-size-sm;
+    color: $color-gray-500;
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    line-height: $line-height-relaxed;
+
+    .contact-icon {
+      color: $color-primary-light;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  }
+
+  // Bottom Bar
+  &__bottom {
+    border-top: 1px solid rgba($color-white, 0.06);
+    padding: $spacing-lg 0;
+  }
+
+  &__bottom-inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    text-align: center;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  &__copyright {
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+    margin: 0 auto;
+  }
+}
