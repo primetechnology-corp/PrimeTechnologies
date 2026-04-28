@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;  
 }
 
 body {
@@ -30,12 +31,17 @@ body {
   color: $color-gray-300;
   background-color: $color-dark;
   overflow-x: hidden;
+  width: 100%;
+  
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
 }
 
 a {
@@ -98,3 +104,4 @@ input, textarea {
   background: rgba($color-primary, 0.3);
   color: $color-white;
 }
+

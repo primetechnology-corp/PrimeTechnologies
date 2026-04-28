@@ -9,7 +9,7 @@
   @include section-padding;
   @include scroll-margin;
   position: relative;
-  background: $color-dark-surface;
+  background: linear-gradient(180deg, $color-dark-surface 0%, $color-dark-blue 100%);
 
   &__inner {
     @include container;
@@ -66,10 +66,6 @@
 
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 

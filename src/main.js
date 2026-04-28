@@ -4,6 +4,16 @@ import { initHeroBackground } from './hero'
 // Hero background (desktop only, handled inside initHeroBackground)
 initHeroBackground()
 
+
+const currentYear = new Date().getFullYear().toString();
+
+// Footer year
+const footerYear = document.getElementById('footer-year');
+if (footerYear) {
+  footerYear.textContent = currentYear;
+  footerYear.setAttribute('datetime', currentYear);
+}
+
 // Header scroll state
 const header = document.querySelector('.header')
 
@@ -85,3 +95,4 @@ if ('IntersectionObserver' in window) {
 } else {
   animateElements.forEach((element) => element.classList.add('animate-in'))
 }
+

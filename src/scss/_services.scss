@@ -9,7 +9,7 @@
   @include section-padding;
   @include scroll-margin;
   position: relative;
-  background: $color-dark;
+  background: linear-gradient(180deg, $color-dark 0%, $color-dark-surface 100%);
 
   // Subtle background accent
   &::before {
@@ -80,7 +80,7 @@
     gap: $spacing-lg;
 
     @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
 
     @include respond-to(lg) {
@@ -170,23 +170,5 @@
     color: $color-gray-400;
     line-height: $line-height-relaxed;
     flex-grow: 1;
-  }
-
-  &__card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-sm;
-    margin-top: $spacing-sm;
-    list-style: none;
-    padding: 0;
-  }
-
-  &__card-tag {
-    font-size: $font-size-xs;
-    color: $color-gray-500;
-    background: rgba($color-white, 0.04);
-    padding: $spacing-xs $spacing-sm;
-    border-radius: $radius-sm;
-    border: 1px solid rgba($color-white, 0.06);
   }
 }

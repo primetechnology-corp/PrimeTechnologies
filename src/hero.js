@@ -183,6 +183,9 @@ class HeroBackground {
           float vy = -(touchTex.g * 2.0 - 1.0);
           float touchIntensity = touchTex.b;
 
+          // === INTENSIDADE DO EFEITO NO CURSOR ===
+          // O valor 0.22 controla a força da distorção ao mover o mouse
+          // Aumente para distorção mais forte, diminua para mais sutil (ex: 0.05 = fraco, 0.5 = forte)
           uv.x += vx * 0.22 * touchIntensity;
           uv.y += vy * 0.22 * touchIntensity;
 
@@ -195,16 +198,24 @@ class HeroBackground {
           float n2 = noise(p * 3.7 - vec2(t * 0.7, t * 1.1));
           float flow = mix(n1, n2, 0.5);
 
-          float d = length(p - pointer * 0.2);
-          float pointerGlow = smoothstep(0.55, 0.0, d) * 0.22;
+          // === BRILHO DO CURSOR (GLOW) ===
+          // pointer * 0.2 = quanto a posição do mouse desloca o centro do glow (0.0 = fixo, 1.0 = segue totalmente)
+          float d = length(p - pointer * 0.01);
+          // smoothstep(0.55, ...) = raio do glow | * 0.22 = intensidade do brilho no cursor
+          float pointerGlow = smoothstep(0.3, 0.0, d) * 0.1;
 
-          vec3 blue = vec3(0.16, 0.43, 0.68);
-          vec3 cyan = vec3(0.27, 0.74, 0.80);
+          // === CORES DO HERO ===
+          // Altere os valores RGB (0.0 a 1.0) para mudar as cores do fundo
+          // blue = cor principal (tom mais escuro) | cyan = cor secundária (tom mais claro)
+          vec3 blue = vec3(0.04, 0.10, 0.22);   // Azul escuro principal
+          vec3 cyan = vec3(0.08, 0.22, 0.35);   // Azul secundário (mais claro)
 
           vec3 color = mix(blue, cyan, smoothstep(0.2, 0.95, flow + pointerGlow * 0.65));
 
-          float vignette = smoothstep(1.15, 0.15, length((uv - 0.5) * vec2(1.25, 1.0)));
-          color *= 0.75 + vignette * 0.35;
+          // === BRILHO GERAL ===
+          // Primeiro valor (0.55) = brilho mínimo nas bordas | Segundo valor (0.30) = brilho extra no centro
+          float vignette = smoothstep(2.15, 0.8, length((uv - 0.5) * vec2(1.25, 1.0)));
+          color *= 0.55 + vignette * 0.30;
 
           gl_FragColor = vec4(color, 1.0);
         }
@@ -253,7 +264,7 @@ class HeroBackground {
 
     const delta = this.clock.getDelta()
     this.touchTexture?.update()
-    this.mesh.material.uniforms.uTime.value += this.prefersReducedMotion ? delta * 0.35 : delta
+    this.mesh.material.uniforms.uTime.value += this.prefersReducedMotion ? delta * 0.1 : delta
     this.renderer.render(this.scene, this.camera)
   }
 

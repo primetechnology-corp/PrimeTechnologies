@@ -61,8 +61,8 @@
 
 // Section Padding
 @mixin section-padding {
-  padding-top: $spacing-3xl;
-  padding-bottom: $spacing-3xl;
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
 
   @include respond-to(md) {
     padding-top: $spacing-4xl;
@@ -70,8 +70,8 @@
   }
 
   @include respond-to(lg) {
-    padding-top: $spacing-5xl;
-    padding-bottom: $spacing-5xl;
+    padding-top: $spacing-4xl;
+    padding-bottom: $spacing-4xl;
   }
 }
 
