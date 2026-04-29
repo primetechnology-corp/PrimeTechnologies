@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 const RATE_LIMIT_KEY = 'pt_form_last_submit'
 const RATE_LIMIT_MS = 30_000 // 30 seconds cooldown
 const FORM_ENDPOINT =
-  'https://script.google.com/macros/s/AKfycbwfXBjQXG0sTEuA3Xks9K_3voUCmrivlxZLhe9Y-HOLBNT5rcQ9hz-7yO9aeqnjuMOYGw/exec'
+  'https://script.google.com/macros/s/AKfycbzzpf6k5OqEPEZzOlxlA1Zm9OLN0P3F9VGwWsARJdWTZRBDnBS_jthBUGc9nC-_wi4gQA/exec'
 
 // ── Helpers ──
 
