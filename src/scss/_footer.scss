@@ -24,8 +24,18 @@
   // CTA Section
   &__cta {
     @include section-padding;
-    text-align: center;
     position: relative;
+    overflow: hidden;
+
+    .footer__bg-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+      pointer-events: none;
+    }
 
     &::after {
       content: '';
@@ -38,9 +48,120 @@
     }
   }
 
-  &__cta-inner {
+  &__data {
     @include container;
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    @include respond-to(lg) {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-3xl;
+    }
+  }
+
+  // Contact Form
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    width: 100%;
+  }
+
+  &__form-row {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+      flex-direction: row;
+
+      .footer__form-group {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+
+  &__form-group {
+    position: relative;
+  }
+
+  &__form-textarea {
+    height: 140px;
+    resize: none;
+    padding-top: $spacing-lg;
+    line-height: $line-height-relaxed;
+
+    & ~ .footer__form-label {
+      top: $spacing-md;
+      transform: none;
+    }
+  }
+
+  &__form-input {
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    color: $color-white;
+    background: rgba($color-dark-card, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba($color-white, 0.1);
+    border-radius: $radius-lg;
+    outline: none;
+    transition: border-color $transition-base, box-shadow $transition-base, background $transition-base;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      border-color: rgba($color-primary, 0.5);
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.1), 0 0 20px rgba($color-primary, 0.08);
+      background: rgba($color-dark-card, 0.7);
+    }
+
+    // Float label when input is focused or has content
+    &:focus ~ .footer__form-label,
+    &:not(:placeholder-shown) ~ .footer__form-label {
+      top: -8px;
+      left: $spacing-md;
+      font-size: $font-size-xs;
+      color: $color-primary-light;
+      background: $color-dark-blue;
+      padding: 0 $spacing-xs;
+    }
+  }
+
+  &__form-label {
+    position: absolute;
+    top: 50%;
+    left: $spacing-lg;
+    transform: translateY(-50%);
+    font-size: $font-size-base;
+    color: $color-gray-500;
+    pointer-events: none;
+    transition: all $transition-base;
+  }
+
+  &__form-btn {
+    align-self: flex-end;
+    margin-top: $spacing-xs;
+
+    @include respond-below(md) {
+      width: 100%;
+    }
+  }
+
+  &__cta-inner {
+
+    @include container;
+    position: relative;
+    z-index: 1;
   }
 
   &__cta-title {
@@ -48,14 +169,12 @@
     margin-bottom: $spacing-md;
 
     .highlight {
+      display: inline-block;
       @include text-gradient;
     }
   }
 
   &__cta-description {
-    @include section-subtitle;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: $spacing-xl;
   }
 

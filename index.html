@@ -238,23 +238,46 @@
     <!-- ========== FOOTER ========== -->
     <footer class="footer" id="contato" role="contentinfo">
       <!-- CTA Section -->
-      <section class="footer__cta" aria-labelledby="cta-title">
+      <section class="footer__cta" id="footerCta" aria-labelledby="cta-title">
+      <div class="footer__data">
+
         <div class="footer__cta-inner">
           <h2 id="cta-title" class="footer__cta-title">
-            Pronto para transformar sua
-            <span class="highlight">ideia em realidade</span>?
+            Pronto para transformar sua <span class="highlight">ideia em realidade</span>?
           </h2>
           <p class="footer__cta-description">
             Vamos conversar sobre o seu projeto. Nossa equipe está pronta para entender suas necessidades e propor a melhor solução.
           </p>
-          <div class="footer__cta-actions">
-            <a href="mailto:contato@primetechnology.com.br" class="btn btn--primary btn--lg">
-              Entrar em Contato
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-      
-          </div>
         </div>
+        <div class="footer__cta-inner">
+          <form class="footer__form" action="#" method="post">
+            <div class="footer__form-group">
+              <input type="text" name="name" id="contact-name" class="footer__form-input" placeholder=" " required />
+              <label for="contact-name" class="footer__form-label">Seu nome</label>
+            </div>
+            <div class="footer__form-row">
+              <div class="footer__form-group">
+                <input type="email" name="email" id="contact-email" class="footer__form-input" placeholder=" " required />
+                <label for="contact-email" class="footer__form-label">Seu e-mail</label>
+              </div>
+              <div class="footer__form-group">
+                <input type="tel" name="phone" id="contact-phone" class="footer__form-input" placeholder=" " required />
+                <label for="contact-phone" class="footer__form-label">Seu telefone</label>
+              </div>
+            </div>
+
+            <div class="footer__form-group">
+              <textarea name="message" id="contact-message" class="footer__form-input footer__form-textarea" placeholder=" "></textarea>
+              <label for="contact-message" class="footer__form-label">Sua mensagem</label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg footer__form-btn">
+              Enviar
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+            </button>
+          </form>
+        </div>
+         </div>
       </section>
 
       <!-- Footer Main -->
