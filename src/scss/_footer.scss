@@ -85,8 +85,41 @@
     }
   }
 
+  // Honeypot - hidden from humans
+  &__form-hp {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   &__form-group {
     position: relative;
+  }
+
+  &__form-error {
+    display: block;
+    font-size: $font-size-xs;
+    color: #f87171;
+    margin-top: $spacing-xs;
+    min-height: 0;
+    transition: all $transition-fast;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__form-input.has-error {
+    border-color: rgba(#f87171, 0.6);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(#f87171, 0.15), 0 0 20px rgba(#f87171, 0.08);
+    }
   }
 
   &__form-textarea {

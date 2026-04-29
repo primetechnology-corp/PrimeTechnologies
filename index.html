@@ -250,25 +250,35 @@
           </p>
         </div>
         <div class="footer__cta-inner">
-          <form class="footer__form" action="#" method="post">
+          <form class="footer__form" action="#" method="post" novalidate>
+            <!-- Honeypot anti-bot -->
+            <div class="footer__form-hp" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input type="text" name="website" id="contact-website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="footer__form-group">
-              <input type="text" name="name" id="contact-name" class="footer__form-input" placeholder=" " required />
+              <input type="text" name="name" id="contact-name" class="footer__form-input" placeholder=" " required minlength="2" maxlength="100" />
               <label for="contact-name" class="footer__form-label">Seu nome</label>
+              <span class="footer__form-error" id="error-name"></span>
             </div>
             <div class="footer__form-row">
               <div class="footer__form-group">
-                <input type="email" name="email" id="contact-email" class="footer__form-input" placeholder=" " required />
+                <input type="email" name="email" id="contact-email" class="footer__form-input" placeholder=" " required maxlength="254" />
                 <label for="contact-email" class="footer__form-label">Seu e-mail</label>
+                <span class="footer__form-error" id="error-email"></span>
               </div>
               <div class="footer__form-group">
-                <input type="tel" name="phone" id="contact-phone" class="footer__form-input" placeholder=" " required />
+                <input type="tel" name="phone" id="contact-phone" class="footer__form-input" placeholder=" " required maxlength="15" />
                 <label for="contact-phone" class="footer__form-label">Seu telefone</label>
+                <span class="footer__form-error" id="error-phone"></span>
               </div>
             </div>
 
             <div class="footer__form-group">
-              <textarea name="message" id="contact-message" class="footer__form-input footer__form-textarea" placeholder=" "></textarea>
+              <textarea name="message" id="contact-message" class="footer__form-input footer__form-textarea" placeholder=" " maxlength="1000"></textarea>
               <label for="contact-message" class="footer__form-label">Sua mensagem</label>
+              <span class="footer__form-error" id="error-message"></span>
             </div>
 
             <button type="submit" class="btn btn--primary btn--lg footer__form-btn">
