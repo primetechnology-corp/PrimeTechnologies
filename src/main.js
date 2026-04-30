@@ -1,13 +1,9 @@
 import './scss/main.scss'
 import { initHeroBackground } from './hero'
-import { initFooterEffect } from './footerEffect'
 import { initFormHandler } from './formHandler'
 
 // Hero background (desktop only, handled inside initHeroBackground)
 initHeroBackground()
-
-// Footer CTA background effect (autonomous animation)
-initFooterEffect()
 
 // Contact form (mask, validation, security, submission)
 initFormHandler()

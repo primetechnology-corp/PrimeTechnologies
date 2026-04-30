@@ -27,14 +27,32 @@
     position: relative;
     overflow: hidden;
 
-    .footer__bg-canvas {
+    // CSS-only background replicating the Three.js shader appearance
+    &::before {
+      content: '';
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
       z-index: 0;
       pointer-events: none;
+      background:
+        // Top fade to dark
+        linear-gradient(to bottom, $color-dark-blue 0%, transparent 18%),
+        // Bottom fade to dark
+        linear-gradient(to top, $color-dark-blue 0%, transparent 18%),
+        // Vignette
+        radial-gradient(ellipse 125% 100% at 50% 50%, transparent 50%, rgba($color-dark-blue, 0.45) 100%),
+        // Primary glow blob (upper-left area)
+        radial-gradient(ellipse 60% 55% at 30% 40%, rgba(20, 56, 89, 0.7) 0%, transparent 70%),
+        // Secondary glow blob (lower-right area)
+        radial-gradient(ellipse 55% 50% at 70% 65%, rgba(31, 77, 115, 0.5) 0%, transparent 70%),
+        // Subtle accent highlight (center-left)
+        radial-gradient(ellipse 40% 45% at 20% 60%, rgba(10, 42, 70, 0.6) 0%, transparent 65%),
+        // Subtle warm highlight (upper-right)
+        radial-gradient(ellipse 45% 40% at 75% 30%, rgba(15, 50, 80, 0.4) 0%, transparent 60%),
+        // Small bright spot
+        radial-gradient(circle 180px at 35% 45%, rgba(30, 80, 120, 0.35) 0%, transparent 100%),
+        // Base dark blue
+        linear-gradient(180deg, #0a1a38 0%, #0e2240 30%, #0c1e35 70%, #0a1a38 100%);
     }
 
     &::after {
